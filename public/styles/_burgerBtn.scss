@@ -1,0 +1,40 @@
+.menu {
+    margin: 10px ;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    height: 50px;
+    .bar {
+      width: 45px;
+      height: 8px;
+      background: #fff;
+      border-radius: 2px;
+      transition: 0.4s ease;
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+  }
+  #btnDropdown {
+    position: absolute;
+    left: -999px;
+    top: -999px;
+  }
+  #btnDropdown:checked + .menu {
+    .bar {
+      background: var(--secondaryColor);
+      transform: rotatey(180deg) rotatex(360deg);
+      &:first-child {
+        transform: rotate(-45deg);
+        margin-top: 20px;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        margin-top: -24px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  
